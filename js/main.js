@@ -63,3 +63,54 @@ function manipulaDados(operacao, controle, pecaStatus) {
       }
   }
 }
+
+
+
+const robotron = document.querySelector("#robotron");
+const cores = document.querySelectorAll("[data-cor]");
+
+
+cores.forEach((elemento) => {
+    elemento.addEventListener("click", (evento) => {
+      const cor = evento.target.dataset.cor;
+      robotron.src = `img/robotron-${cor}.png`;
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Seleciona a imagem
+// const imagem = document.querySelector('#robotron');
+
+// // Seleciona a lista de cores
+// const listaCores = document.querySelector('.lista-cores');
+
+// // Adiciona um evento de clique à lista
+// listaCores.addEventListener('click', function(event) {
+//   // Verifica se o elemento clicado é um elemento da lista
+//   if (event.target.tagName === 'LI') {
+//     // Muda a imagem de acordo com a cor clicada
+//     imagem.src = `img/robotron-${event.target.classList[1]}.png`;
+//   }
+// });

@@ -17,7 +17,8 @@ body {
     font-weight: 300;
 }
 
-body, input {
+body,
+input {
     font-family: 'Teko', sans-serif;
 }
 
@@ -28,6 +29,7 @@ main {
     display: flex;
     gap: 1vw;
 }
+
 
 .robotron {
     background: url(../img/estrutura.png) no-repeat;
@@ -45,6 +47,61 @@ main {
     top: -5%;
 }
 
+.contrainer-cores {
+    display: flex;
+    width: 36.625rem;
+    height: 90vh;
+    align-items: flex-end;
+
+}
+
+.lista-cores {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0;
+}
+
+.cor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    list-style: none;
+    transition:transform 0.4s ;
+}
+
+.cor:hover {
+    transform: scale(1.3);
+}
+
+.cor:nth-child(1) {
+    background-color: red;
+}
+
+.cor:nth-child(2) {
+    background-color: yellow;
+}
+
+.cor:nth-child(3) {
+    background-color: black;
+}
+
+.cor:nth-child(4) {
+    background-color: white;
+}
+
+.cor:nth-child(5) {
+    background-color: pink;
+}
+
+.cor:nth-child(6) {
+    background-color: blue;
+}
+
+
+
 .titulo {
     transform: rotate(180deg);
     font-weight: 500;
@@ -55,11 +112,11 @@ main {
     line-height: 0.8;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    color: rgba(255,255,255,0.8)
+    color: rgba(255, 255, 255, 0.8)
 }
 
 .box {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
     border-left: 5px solid var(--main-cinza);
     height: 80%;
@@ -72,7 +129,8 @@ main {
 }
 
 .montador {
-    height: 100%;;
+    height: 100%;
+    ;
 }
 
 .montador-conteudo {
@@ -209,10 +267,13 @@ main {
     margin: 10px 0 0;
 }
 
+
+
 @media screen and (max-width: 1600px) {
-    body { 
+    body {
         font-size: 14px;
     }
+
     main {
         width: 90vw;
         height: 80vh;
@@ -221,7 +282,7 @@ main {
 }
 
 @media screen and (max-width: 1200px) {
-    body { 
+    body {
         font-size: 13px;
     }
 
