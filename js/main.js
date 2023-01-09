@@ -41,35 +41,25 @@ const pecas = {
 
 controle.forEach((elemento) => {
   elemento.addEventListener("click", (evento) => {
-    manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
-    atualizaEstatisticas(evento.target.dataset.peca)
+    manipulaDados(evento.target.dataset.controle, evento.target.parentNode, evento.target.dataset.peca)
+    
   })
 });
 
 
-function manipulaDados(operacao, controle) {
-
-  var peca = controle.querySelector("[data-contador]")
-
-  if (operacao === "subtrai") {
-    peca.value = parseInt(peca.value) - 1
-
+function manipulaDados(operacao, controle, pecaStatus) {
+  const peca = controle.querySelector('[data-contador]')
+  if(operacao === '+') {
+      peca.value = String(parseInt(peca.value) + 1).padStart(2, '0');
+      estatisticas.forEach( (elemento) => {
+          elemento.textContent = parseInt(elemento.textContent) + pecas[pecaStatus][elemento.dataset.estatistica]
+      })
   } else {
-    peca.value = parseInt(peca.value) + 1
+      if(parseInt(peca.value)) {
+          peca.value = String(parseInt(peca.value) - 1).padStart(2, '0');
+          estatisticas.forEach( (elemento) => {
+          elemento.textContent = parseInt(elemento.textContent) - pecas[pecaStatus][elemento.dataset.estatistica]
+          })
+      }
   }
-
-}
-
-
-function atualizaEstatisticas(peca) {
-  estatisticas.forEach((elemento) => {
-    
-
-    let valorEstatisticas = [elemento.textContent];
-    
-    let valorPecas = pecas[peca][elemento.dataset.estatistica]
-    
-    
-  })
-
 }
